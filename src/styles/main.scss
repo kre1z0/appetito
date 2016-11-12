@@ -1,0 +1,189 @@
+body {
+  background: url(http://s11.postimg.org/p4uy4cu1f/cooking_cropped.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Montserrat', 'ariel', 'helvetica', sans-serif;
+  background-size: cover;
+}
+
+#root {
+  width: 90%;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+  min-width: 200px;
+  margin: 0 auto;
+  font-family: 'Noto Sans', 'Helvetica', sans-serif;
+  text-align: center;
+
+  h1 {
+    color: white;
+    font-family: 'Montserrat', 'ariel', 'helvetica', sans-serif;
+    width: 70%;
+    max-width: 800px;
+    font-size: 5rem;
+    margin: 10px auto 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    text-shadow: 2px 2px 1px rgba(0,0,0,.8),
+    2px 2px 1px rgba(0,0,0,.8);
+    @media screen and (max-width: 700px) {
+      width: 90%;
+      font-size: 4rem;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .btn {
+    &:focus {
+      outline: none;
+    }
+    &.btn-create {
+      margin-top: -30px;
+      min-width: 40%;
+      background: rgba(0, 120,40, 1);
+      border: 2px solid rgba(210,210,210, 1);
+      font-size: 1.8rem;
+      &:hover {
+        background: rgba(0, 100,20, 1);
+      }
+    }
+  }
+}
+
+.recipe-app {
+  width: 80%;
+  max-width: 800px;
+  @media screen and (max-width: 700px) {
+    width: 90%;
+  }
+  margin: 30px auto 40px;
+  background: rgba(230,230,230,.8);
+  border-radius: 10px;
+  border: 1px solid rgba(200,200,200,.5);
+  text-align: center;
+  padding: 15px 0;
+  max-width: 768px;
+  padding: 0;
+  .recipe {
+    width: 90%;
+    text-align: left;
+    background: rgba(250,250,250,1);
+    border-radius: 10px;
+    margin: 10px auto;
+    a {
+      text-decoration: none;
+      a:hover,
+      a:focus,
+      a:visited {
+        text-decoration: none;
+      }
+    }
+    .ingredients {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      td {
+        width: 100%;
+        border: 1px solid rgba(210,210,210,1);
+        padding: 10px
+      }
+    }
+    .recipe-header {
+      background: rgba(0,90,140,1);
+      position: relative;
+      color: rgba(250,250,250,1);
+      font-size: 2rem;
+      letter-spacing: 1px;
+      margin-top: 0;
+      margin-bottom: 0;
+      border-radius: 5px;
+      padding: 10px;
+      transition: all .25s linear;
+      &.active {
+        border-radius: 5px 5px 0 0;
+        background: rgba(10,80,120,1);
+      }
+      .glyphicon-plus-sign,
+      .glyphicon-minus-sign {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+      @media screen and (max-width: 350px) {
+        font-size: 1.8rem;
+      }
+    }
+    .recipe-info {
+      width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+      display: none;
+    }
+    .sub-header {
+      font-size: 1.8rem;
+      margin: 15px auto;
+      width: 80%;
+      text-align: center;
+    }
+    .directions {
+      width: 90%;
+      margin: 0 auto;
+      padding-bottom: 10px;
+    }
+    .edit-btn {
+      background: rgba(20,100,150,1);
+      color: rgba(250,250,250,1);
+      margin-left: 15px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      position: relative;
+      &:hover {
+        background: rgba(50,130,180,1);
+      }
+    }
+  }
+}
+
+
+// Create Recipe Modal
+
+.modal {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  .text-danger {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .modal-footer {
+    @media screen and (max-width: 350px) {
+      text-align: center;
+    }
+  }
+  button {
+    &.btn {
+      &.btn-danger {
+        position: absolute;
+        left: 10px;
+        bottom: 15px;
+      }
+      &.btn-danger,
+      &.btn-default,
+      &.btn-primary {
+        @media screen and (max-width: 350px) {
+          width: 80%;
+          position: relative;
+          margin: 5px auto;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  label {
+    margin-top: 10px;
+  }
+}
