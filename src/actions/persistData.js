@@ -1,13 +1,11 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const persistData = store => next => action => {
-
   let localState = localStorage.getItem('recipe-collection')
 
   if (localState && typeof JSON.parse(localState) === 'object') {
     localState = JSON.parse(localState)
-  }
-  else {
+  } else {
     let all = action.payload
     let recipeState = { all: all }
     localState = Object.assign({}, { recipes: recipeState })

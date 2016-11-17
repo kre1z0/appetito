@@ -10,6 +10,7 @@ const INITIAL_RECIPE_STATE = {
 function getNextId (lastId) {
   return lastId + 1
 }
+
 // ------ End Reducer Helpers -----//
 
 function RecipeReducer (state = INITIAL_RECIPE_STATE, action) {
@@ -28,14 +29,13 @@ function RecipeReducer (state = INITIAL_RECIPE_STATE, action) {
       return Object.assign({}, state, { currentRecipe: newCurrent })
     case actionTypes.UPDATE_RECIPE:
       return Object.assign({}, state, { currentRecipe: action.payload }, {
-          all: state.all.map(recipe => {
-            if (recipe.id === action.payload.id) {
-              return action.payload
-            }
-            return recipe
-          })
-        }
-      )
+        all: state.all.map(recipe => {
+          if (recipe.id === action.payload.id) {
+            return action.payload
+          }
+          return recipe
+        })
+      })
     case actionTypes.SAVE_NEW_RECIPE:
       let newRecipe = action.payload
       newRecipe.id = getNextId(state.lastId)

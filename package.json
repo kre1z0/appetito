@@ -16,6 +16,7 @@
   "author": "Igor Ivchuk <thekreizo@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
